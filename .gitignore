@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.iml
+.idea/
+target/
+book-downloader/target/
+books-library/target/
+scripts/
+start-app.sh
+*.keytab
