@@ -9,6 +9,7 @@ import ru.example.books_library.domain.Book;
 import ru.example.books_library.domain.BookDTO;
 import ru.example.books_library.repository.BookRepository;
 import ru.example.books_library.service.BookService;
+import ru.example.books_library.service.DownloadService;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
 
     private final BookRepository bookRepository;
+    private final DownloadService downloadService;
 
 
     @Override
@@ -51,7 +53,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     @KafkaListener(topics = "book_downloads", groupId = "group_id")
-    public void downloadsIncrement(Long id) {
-        log.info("Downloaded book,id={}",id);
+    public void downloadsIncrement(Long id) throws NotFoundException, InterruptedException {
+        downloadService.downloadBook(getBook(id));
     }
 }

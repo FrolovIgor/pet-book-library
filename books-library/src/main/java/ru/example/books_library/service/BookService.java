@@ -17,6 +17,6 @@ public interface BookService {
 
     Book addBook(BookDTO book);
 
-    void downloadsIncrement(Long id);
+    void downloadsIncrement(Long id) throws NotFoundException, InterruptedException;
 
 }
