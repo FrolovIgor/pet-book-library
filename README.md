@@ -1,6 +1,6 @@
-## Pet-spring-project
+## Pet-book-library
 
-### Тестовый проект на Spring с использованием Kafka и PostgreSQL
+### Проект на Spring с использованием Kafka и PostgreSQL
 
 #### Порядок запуска
 - собрать образ с приложением запустив `build.sh` в корне проекта
@@ -18,7 +18,7 @@
 `/book/{id}`   | DELETE       | void    | Удаляет книгу с заданным id
 `/actuator/health`   | GET       | Health    | Информация о работоспособности
 
-#### BooksLibrary (localhost:28877)
+#### BooksLibrary (localhost:26655)
 **Path**           | **Method** | **Response**         | **Comment**
  ---               | ---       | ---                | ---
 `/download/{id}`   | GET       | void | Запускает загрузку книги
